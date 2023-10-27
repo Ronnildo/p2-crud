@@ -1,5 +1,4 @@
 import 'package:crud/controller/clube_controller.dart';
-import 'package:crud/crud.dart';
 import 'package:crud/models/funcionario.dart';
 import 'package:crud/models/jogador.dart';
 import 'package:crud/models/presidente.dart';
@@ -122,9 +121,97 @@ void main() {
     });
   });
   group("Update Funcionario", () {
-    test("Add Presidente test", () {});
-  });
-  group("Read Funcionario", () {
-    test("Add Presidente test", () {});
+    test("Update Presidente test", () {
+      CrudContoller c = CrudContoller();
+      Funcionario f = Presidente(
+        "Rau",
+        "Raz",
+        50000,
+        4,
+        65,
+      );
+      c.adicionarFuncionario(f);
+      bool res = c.atualizarFuncionario(
+        "Presidente",
+        "Rau",
+        "Rau",
+        "Raz",
+        40000,
+        76,
+        4,
+        "",
+      );
+      expect(res, true);
+    });
+
+    test("Update Treinador test", () {
+      CrudContoller c = CrudContoller();
+      Funcionario f = Treinador(
+        "Rau",
+        "Raz",
+        50000,
+        4,
+        65,
+      );
+      c.adicionarFuncionario(f);
+      bool res = c.atualizarFuncionario(
+        "Treinador",
+        "Rau",
+        "Rau",
+        "Raz",
+        40000,
+        68,
+        2,
+        "",
+      );
+      expect(res, true);
+    });
+
+    test("Update Jogador test", () {
+      CrudContoller c = CrudContoller();
+      Funcionario f = Jogador(
+        "Rau",
+        "Raz",
+        50000,
+        "ATA",
+        4,
+        30,
+      );
+      c.adicionarFuncionario(f);
+      bool res = c.atualizarFuncionario(
+        "Jogador",
+        "Rau",
+        "Rau",
+        "Raz",
+        40000,
+        34,
+        2,
+        "ATA",
+      );
+      expect(res, true);
+    });
+
+    test("Update Serviços Gerais test", () {
+      CrudContoller c = CrudContoller();
+      Funcionario f = ServicosGerais(
+        "Rau",
+        "Raz",
+        1000,
+        Atribuicao.zelador,
+        4,
+      );
+      c.adicionarFuncionario(f);
+      bool res = c.atualizarFuncionario(
+        "ServicosGerais",
+        "Rau",
+        "Rau",
+        "Raz",
+        1500,
+        0,
+        6,
+        "",
+      );
+      expect(res, true);
+    });
   });
 }

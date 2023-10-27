@@ -67,17 +67,57 @@ class CrudContoller {
     }
   }
 
-  retornaFuncionario(List data, String nome) {
-    for (var element in data) {
-      if (element.nome == nome) {
-        return element;
-      } else {
-        return Null;
-      }
+  atualizarFuncionario(
+    String entrada,
+    String nome,
+    String novoNome,
+    String novoSobrenome,
+    double novoSalario,
+    int novaIdade,
+    int novoContrato,
+    String posicao,
+  ) {
+    switch (entrada) {
+      case "Presidente":
+        var func = retornaFuncionario(_presidente, nome);
+
+        func.nome = novoNome;
+        func.sobrenome = novoSobrenome;
+        func.salario = novoSalario;
+        func.idade = novaIdade;
+        func.tempoContrato = novoContrato;
+
+        return true;
+      case "Treinador":
+        var func = retornaFuncionario(_treinador, nome);
+        func.nome = novoNome;
+        func.sobrenome = novoSobrenome;
+        func.salario = novoSalario;
+        func.idade = novaIdade;
+        func.tempoContrato = novoContrato;
+
+        return true;
+      case "Jogador":
+        var func = retornaFuncionario(_jogadores, nome);
+        func.nome = novoNome;
+        func.sobrenome = novoSobrenome;
+        func.salario = novoSalario;
+        func.idade = novaIdade;
+        func.tempoContrato = novoContrato;
+        func.posicao = posicao;
+
+        return true;
+      case "ServicosGerais":
+        var func = retornaFuncionario(_servicosGerais, nome);
+        func.nome = novoNome;
+        func.sobrenome = novoSobrenome;
+        func.salario = novoSalario;
+        func.tempoContrato = novoContrato;
+
+        return true;
     }
   }
 
-  atualizarFuncionario() {}
   listarFuncionarios(String entrada) {
     try {
       switch (entrada) {
@@ -106,6 +146,16 @@ class CrudContoller {
   percorrerLista(List data) {
     for (var element in data) {
       print(element.toString());
+    }
+  }
+
+  retornaFuncionario(List data, String nome) {
+    for (var element in data) {
+      if (element.nome == nome) {
+        return element;
+      } else {
+        return Null;
+      }
     }
   }
 }

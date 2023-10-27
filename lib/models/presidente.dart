@@ -14,6 +14,9 @@ class Presidente extends Funcionario {
   // TODO: implement salario
   double get salario => super.salario * 0.5;
 
+  set idade(int value) => _idade = value;
+  int get idade => _idade;
+
   @override
   String toString() {
     // TODO: implement toString

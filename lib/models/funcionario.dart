@@ -6,9 +6,15 @@ abstract class Funcionario {
 
   Funcionario(this._nome, this._sobrenome, this._salario, this._tempoContrato);
 
+  set nome(String nome) => _nome = nome;
+  String get nome => _nome;
+
+  set salario(double salario) => _salario = salario;
   double get salario => _salario;
 
-  int get tempoContrato => _tempoContrato;
+  set sobrenome(String sobrenome) => _sobrenome = sobrenome;
+  String get sobrenome => _sobrenome;
 
-  String get nome => _nome;
+  set tempoContrato(int tempo) => _tempoContrato = tempo;
+  int get tempoContrato => _tempoContrato;
 }

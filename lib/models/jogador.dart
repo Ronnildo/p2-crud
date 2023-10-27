@@ -16,6 +16,12 @@ class Jogador extends Funcionario {
   // TODO: implement salario
   double get salario => super.salario * 0.8;
 
+  set idade(int value) => _idade = value;
+  int get idade => _idade;
+
+  set posicao(String value) => _posicao = value;
+  String get posicao => _posicao;
+
   @override
   String toString() {
     // TODO: implement toString

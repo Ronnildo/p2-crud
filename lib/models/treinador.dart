@@ -10,7 +10,9 @@ class Treinador extends Funcionario {
     super._tempoContrato,
   );
 
-  get idade => _idade;
+  set idade(int value) => _idade = value;
+  int get idade => _idade;
+
   @override
   String toString() {
     // TODO: implement toString
