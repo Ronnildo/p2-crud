@@ -1,5 +1,6 @@
-import 'package:crud/crud.dart' as crud;
+import 'package:crud/crud.dart';
 
 void main(List<String> arguments) {
-  print('Hello world: ${crud.calculate()}!');
+  Clube c = Clube();
+  c.init();
 }
