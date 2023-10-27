@@ -13,27 +13,30 @@ class CrudContoller {
   adicionarFuncionario(Funcionario f) {
     if (f.runtimeType == Treinador) {
       _treinador.add(f as Treinador);
+      print("Funcionário cadastrado com sucesso.\n");
       return true;
     } else if (f.runtimeType == Presidente) {
       if (_presidente.length == 1) {
         return false;
       } else {
         _presidente.add(f as Presidente);
-        print("Funcionário cadastrado com sucesso.");
+        print("Funcionário cadastrado com sucesso.\n");
         return true;
       }
     } else if (f.runtimeType == Jogador) {
       _jogadores.add(f as Jogador);
+      print("Funcionário cadastrado com sucesso. \n");
       return true;
     } else if (f.runtimeType == ServicosGerais) {
       _servicosGerais.add(f as ServicosGerais);
+      print("Funcionário cadastrado com sucesso. \n");
       return true;
     }
     return false;
   }
 
-  removerFuncionario(String lista, String nome) {
-    switch (lista) {
+  removerFuncionario(String entrada, String nome) {
+    switch (entrada) {
       case "Presidente":
         var func = retornaFuncionario(_presidente, nome);
         _presidente.remove(func);
@@ -123,27 +126,27 @@ class CrudContoller {
       switch (entrada) {
         case "Treinador":
           print("Treinador");
-          percorrerLista(_treinador);
+          percorrerentrada(_treinador);
           break;
         case "Jogador":
           print("Jogadores");
-          percorrerLista(_jogadores);
+          percorrerentrada(_jogadores);
           break;
         case "Presidente":
           print("Presidente");
-          percorrerLista(_presidente);
+          percorrerentrada(_presidente);
           break;
         case "ServicosGerais":
           print("Serviços Gerais");
-          percorrerLista(_servicosGerais);
+          percorrerentrada(_servicosGerais);
           break;
       }
     } on Exception catch (e) {
-      print("Lista vázia: $e");
+      print("entrada vázia: $e");
     }
   }
 
-  percorrerLista(List data) {
+  percorrerentrada(List data) {
     for (var element in data) {
       print(element.toString());
     }

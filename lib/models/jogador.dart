@@ -14,7 +14,7 @@ class Jogador extends Funcionario {
 
   @override
   // TODO: implement salario
-  double get salario => super.salario * 0.8;
+  double get salario => super.salario + (super.salario * 0.8);
 
   set idade(int value) => _idade = value;
   int get idade => _idade;

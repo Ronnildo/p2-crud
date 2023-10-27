@@ -12,7 +12,7 @@ class Presidente extends Funcionario {
 
   @override
   // TODO: implement salario
-  double get salario => super.salario * 0.5;
+  double get salario => super.salario;
 
   set idade(int value) => _idade = value;
   int get idade => _idade;

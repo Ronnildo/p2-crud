@@ -13,16 +13,16 @@ class ServicosGerais extends Funcionario {
 
   double salarioTipoFuncionario() {
     if (Atribuicao.auxiliarLimpeza == _setor) {
-      return super.salario * 0.2;
+      return super.salario + (super.salario * 0.2);
     } else if (Atribuicao.porteiro == _setor) {
-      return super.salario * 0.3;
+      return super.salario + (super.salario * 0.3);
     } else if (_setor == Atribuicao.zelador) {
-      return super.salario * 0.5;
+      return super.salario + (super.salario * 0.4);
     }
     return super.salario;
   }
 
-  get setor => _setor;
+  get setor => _setor.name;
 
   @override
   String toString() {

@@ -16,6 +16,6 @@ class Treinador extends Funcionario {
   @override
   String toString() {
     // TODO: implement toString
-    return "Nome: ${super.nome}, Idade: $_idade, Salário: $salario, Tempo de Contrato: ${super.tempoContrato} Anos.";
+    return "Nome: ${super.nome}, Idade: $_idade, Salário: ${super.salario}, Tempo de Contrato: ${super.tempoContrato} Anos.";
   }
 }
